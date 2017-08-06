@@ -1,0 +1,121 @@
+This CODE BOOK describes 
+1. The Function "run_analysis.R" (produces for course assignment Getting and Cleaning Data)
+2. The output data files of the execution of run_analysis
+
+
+1. RUN_ANALYSIS
+This function accepts the directory names of the train and test data sets, the data is then merged and tidied to give the final output.
+
+The path to the files to where they were already downloaded is set in the global environement first, which is 
+"./data science/getting and cleaning data/course project/UCI HAR Dataset"
+and set the directory for the train and test data
+
+The data for the features and activities of the data are read in
+  
+Combine the data sets in the following way:
+  # 1. the activity data plus its labels (.._train and features)
+  # 2. then the subjects of that data (... add the subjects)
+  # 3. then label the data (...)
+  
+The training data is done first then the test data then they are merged
+  
+  # TRAINING DATA
+      # read in the data
+      # label the data
+      # read in the activities and label the column
+      # read in the subjects performing the activities and label the column
+      # combine the data as columns
+
+  # TEST DATA (repeat as for training data)
+    
+Now combine the train and test data
+
+Then subset the data to give only those columns with mean or std in the name of the column
+
+Activities columns are modified to use a descriptive name
+  
+An independent data set is created with average of activties by subject
+
+Data is then written to a file ("train_test_data_avg.txt")
+  
+  
+2. THE TIDIED DATA ("train_test_data_avg.txt")
+The train_test_data_avg.txt data file is a text file, containing space-separated values.
+
+	This data set consists of 
+	1. columns (a subject and activity, with 66 activity measurements). these are the mena and standard deviation measurements of the activities
+	2. rows (180 rows each uniquely identified by a subject and an activity), the data is the average of activity measurements form the original data files.
+
+
+	Column Identifiers 
+	subjects; an integer id from 1 to 30.
+	activity; WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+	Actvitity measurements (averages of the mean and standard deviation measurements):
+
+		 "TimeBodyAcceleration-Mean-X" 
+		 "TimeBodyAcceleration-Mean-Y" 
+		 "TimeBodyAcceleration-Mean-Z" 
+		 "TimeGravityAcceleration-Mean-X" 
+		 "TimeGravityAcceleration-Mean-Y" 
+		 "TimeGravityAcceleration-Mean-Z" 
+		 "TimeBodyAccelerationJerk-Mean-X" 
+		 "TimeBodyAccelerationJerk-Mean-Y" 
+		 "TimeBodyAccelerationJerk-Mean-Z" 
+		 "TimeBodyGyroscope-Mean-X" 
+		 "TimeBodyGyroscope-Mean-Y" 
+		 "TimeBodyGyroscope-Mean-Z" 
+		 "TimeBodyGyroscopeJerk-Mean-X" 
+		 "TimeBodyGyroscopeJerk-Mean-Y" 
+		 "TimeBodyGyroscopeJerk-Mean-Z" 
+		 "TimeBodyAccelerationMagnitude-Mean" 
+		 "TimeGravityAccelerationMagnitude-Mean" 
+		 "TimeBodyAccelerationJerkMagnitude-Mean" 
+		 "TimeBodyGyroscopeMagnitude-Mean" 
+		 "TimeBodyGyroscopeJerkMagnitude-Mean" 
+		 "FrequencyBodyAcceleration-Mean-X" 
+		 "FrequencyBodyAcceleration-Mean-Y" 
+		 "FrequencyBodyAcceleration-Mean-Z" 
+		 "FrequencyBodyAccelerationJerk-Mean-X" 
+		 "FrequencyBodyAccelerationJerk-Mean-Y" 
+		 "FrequencyBodyAccelerationJerk-Mean-Z" 
+		 "FrequencyBodyGyroscope-Mean-X" 
+		 "FrequencyBodyGyroscope-Mean-Y" 
+		 "FrequencyBodyGyroscope-Mean-Z" 
+		 "FrequencyBodyAccelerationMagnitude-Mean" 
+		 "FrequencyBodyAccelerationJerkMagnitude-Mean" 
+		 "FrequencyBodyGyroscopeMagnitude-Mean" 
+		 "FrequencyBodyGyroscopeJerkMagnitude-Mean" 
+		 "TimeBodyAcceleration-StandardDev-X" 
+		 "TimeBodyAcceleration-StandardDev-Y" 
+		 "TimeBodyAcceleration-StandardDev-Z" 
+		 "TimeGravityAcceleration-StandardDev-X" 
+		 "TimeGravityAcceleration-StandardDev-Y" 
+		 "TimeGravityAcceleration-StandardDev-Z" 
+		 "TimeBodyAccelerationJerk-StandardDev-X" 
+		 "TimeBodyAccelerationJerk-StandardDev-Y" 
+		 "TimeBodyAccelerationJerk-StandardDev-Z" 
+		 "TimeBodyGyroscope-StandardDev-X" 
+		 "TimeBodyGyroscope-StandardDev-Y" 
+		 "TimeBodyGyroscope-StandardDev-Z" 
+		 "TimeBodyGyroscopeJerk-StandardDev-X" 
+		 "TimeBodyGyroscopeJerk-StandardDev-Y" 
+		 "TimeBodyGyroscopeJerk-StandardDev-Z" 
+		 "TimeBodyAccelerationMagnitude-StandardDev" 
+		 "TimeGravityAccelerationMagnitude-StandardDev" 
+		 "TimeBodyAccelerationJerkMagnitude-StandardDev" 
+		 "TimeBodyGyroscopeMagnitude-StandardDev" 
+		 "TimeBodyGyroscopeJerkMagnitude-StandardDev" 
+		 "FrequencyBodyAcceleration-StandardDev-X" 
+		 "FrequencyBodyAcceleration-StandardDev-Y" 
+		 "FrequencyBodyAcceleration-StandardDev-Z" 
+		 "FrequencyBodyAccelerationJerk-StandardDev-X" 
+		 "FrequencyBodyAccelerationJerk-StandardDev-Y" 
+		 "FrequencyBodyAccelerationJerk-StandardDev-Z" 
+		 "FrequencyBodyGyroscope-StandardDev-X" 
+		 "FrequencyBodyGyroscope-StandardDev-Y" 
+		 "FrequencyBodyGyroscope-StandardDev-Z" 
+		 "FrequencyBodyAccelerationMagnitude-StandardDev" 
+		 "FrequencyBodyAccelerationJerkMagnitude-StandardDev" 
+		 "FrequencyBodyGyroscopeMagnitude-StandardDev" 
+		 "FrequencyBodyGyroscopeJerkMagnitude-StandardDev"
