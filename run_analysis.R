@@ -81,7 +81,7 @@ run_analysis <- function(directory1,directory2) {
   
   # create independent data set with average of activties by subject
   train_test_data_avg <- aggregate(. ~subjects + activities, train_test_data_extr, mean)
-  train_test_data_avg <- train_test_data_extr[order(train_test_data_extr$subjects,train_test_data_extr$activities),]
+  train_test_data_avg <- train_test_data_avg[order(train_test_data_avg$subjects,train_test_data_avg$activities),]
   
   # write it to a file
   write.table(train_test_data_avg, file = "train_test_data_avg.txt",row.name=FALSE)
