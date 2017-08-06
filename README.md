@@ -29,7 +29,7 @@ The following files are included:
 
 
 
-- 'readme getting and cleaning data assignment.txt'
+- 'README.md': this file
 
 
 
