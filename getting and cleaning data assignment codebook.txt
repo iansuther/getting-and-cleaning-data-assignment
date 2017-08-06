@@ -1,0 +1,40 @@
+This CODE BOOK describes 
+1. The Function "run_analysis.R" (produces for course assignment Getting and Cleaning Data)
+2. The output data files of the execution of run_analysis
+
+
+1. RUN_ANALYSIS
+This function accepts the directory names of the train and test data sets, the data is then merged and tidied to give the final output.
+
+The path to the files to where they were already downloaded is set in the global environement first, which is 
+"./data science/getting and cleaning data/course project/UCI HAR Dataset"
+and set the directory for the train and test data
+
+The data for the features and activities of the data are read in
+  
+Combine the data sets in the following way:
+  # 1. the activity data plus its labels (.._train and features)
+  # 2. then the subjects of that data (... add the subjects)
+  # 3. then label the data (...)
+  
+The training data is done first then the test data then they are merged
+  
+  # TRAINING DATA
+      # read in the data
+      # label the data
+      # read in the activities and label the column
+      # read in the subjects performing the activities and label the column
+      # combine the data as columns
+
+  # TEST DATA (repeat as for training data)
+    
+Now combine the train and test data
+
+Then subset the data to give only those columns with mean or std in the name of the column
+
+Activities columns are modified to use a descriptive name
+  
+An independent data set is created with average of activties by subject
+
+Data is then written to a file ("train_test_data_avg.txt")
+  
